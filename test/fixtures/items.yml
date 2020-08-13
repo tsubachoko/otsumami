@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+beer:
+  user: tester
+  type: Drink
+  title: ビール
+  content: シュワシュワして苦いやつ
+  comment: ごはんでもなんでも合います
+
+nuts:
+  user: tester
+  type: Food
+  title: ナッツ
+  content: 酒に合う豆
+  comment: 強めのお酒は大概合います
+
+nuts_and_beer:
+  user: tester
+  type: Paring
+  title: ビール×ナッツ
+  drink_id: beer
+  food_id: nuts
+  comment: 合うっちゃ合う
