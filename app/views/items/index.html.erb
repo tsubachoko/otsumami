@@ -1,0 +1,23 @@
+
+<h1>組み合わせ</h1>
+<ul>
+  <% @parings.each do |paring| %>
+    <li><%= paring.title %></li>
+  <% end %>
+</ul>
+
+
+<h1>ドリンク</h1>
+<ul>
+  <% @drinks.each do |drink| %>
+    <li><%= drink.title %></li>
+  <% end %>
+</ul>
+
+
+<h1>おつまみ</h1>
+<ul>
+  <% @foods.each do |food| %>
+    <li><%= food.title %></li>
+  <% end %>
+</ul>
