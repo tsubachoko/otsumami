@@ -5,8 +5,6 @@ ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -29,6 +27,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+  # Use mysql as the database for Active Record
+  gem 'mysql2', '>= 0.4.4'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -46,6 +47,10 @@ group :test do
   gem 'webdrivers'
   gem 'minitest',           '>= 5.11.3'
   gem 'minitest-reporters', '>= 1.3.8'
+end
+
+group :production do
+  gem 'pg', '>= 1.1.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
