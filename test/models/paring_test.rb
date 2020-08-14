@@ -23,12 +23,12 @@ class ParingTest < ActiveSupport::TestCase
   end
 
   test "drink_id should be prensent" do
-    @paring.drink_id = nil
+    @paring.set_drink(nil)
     assert_not @paring.valid?
   end
 
   test "food_id should be prensent" do
-    @paring.food_id = nil
+    @paring.set_food(nil)
     assert_not @paring.valid?
   end
 
@@ -51,6 +51,16 @@ class ParingTest < ActiveSupport::TestCase
     assert_difference 'Paring.count', -1 do
       @food.destroy
     end
+  end
+
+
+  # メソッドの動作確認
+  test "drink method sholud return drink of paring" do
+    assert_equal @drink, @paring.drink
+  end
+
+  test "food method sholud return food of paring" do
+    assert_equal @food, @paring.food
   end
 
 end
