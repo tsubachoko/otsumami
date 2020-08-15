@@ -6,9 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# Clear all
-User.destroy_all
-Item.destroy_all
 
 # User
 user_names = %w[ちっぞう やまちゃん とみー たけるネス カイ ケンタ]
@@ -46,25 +43,25 @@ user.foods.create(title: "チーズ", content: "ミルクが発酵したやつ",
 user = User.find_by(name: "ケンタ")
 user.foods.create(title: "焼肉", content: "人気で定番の食事", comment: "飲み物よりむしろごはんか？")
 
-# Paring
+# pairing
 user = User.find_by(name: "ちっぞう")
 drink = Drink.find_by(title: "赤ワイン")
 food = Food.find_by(title: "チーズ")
-user.parings.create(title: "赤ワイン×チーズ", drink_id: drink.id, food_id: food.id, comment: "鉄板、文句なかろう？")
+user.pairings.create(title: "赤ワイン×チーズ", drink_id: drink.id, food_id: food.id, comment: "鉄板、文句なかろう？")
 drink = Drink.find_by(title: "焼酎")
 food = Food.find_by(title: "お刺身")
-user.parings.create(title: "焼酎にお刺身！", drink_id: drink.id, food_id: food.id, comment: "日本酒じゃなくて焼酎ってのもなかなかいいです")
+user.pairings.create(title: "焼酎にお刺身！", drink_id: drink.id, food_id: food.id, comment: "日本酒じゃなくて焼酎ってのもなかなかいいです")
 drink = Drink.find_by(title: "生ビール")
 food = Food.find_by(title: "焼肉")
-user.parings.create(title: "焼肉にはやっぱしビールよ", drink_id: drink.id, food_id: food.id, comment: "間違いない")
+user.pairings.create(title: "焼肉にはやっぱしビールよ", drink_id: drink.id, food_id: food.id, comment: "間違いない")
 
 user = User.find_by(name: "とみー")
 drink = Drink.find_by(title: "モスコミュール")
 food = Food.find_by(title: "チーズ")
-user.parings.create(title: "モスコミュールに合わせるのはチーズ", drink_id: drink.id, food_id: food.id, comment: "チーズならなんでもいけます")
+user.pairings.create(title: "モスコミュールに合わせるのはチーズ", drink_id: drink.id, food_id: food.id, comment: "チーズならなんでもいけます")
 
 user = User.find_by(name: "たけるネス")
 drink = Drink.find_by(title: "水")
 food = Food.find_by(title: "焼肉")
-user.parings.create(title: "焼肉は実は水がいい", drink_id: drink.id, food_id: food.id, comment: "ビールでも白米でもなく、水が最強よ")
+user.pairings.create(title: "焼肉は実は水がいい", drink_id: drink.id, food_id: food.id, comment: "ビールでも白米でもなく、水が最強よ")
 

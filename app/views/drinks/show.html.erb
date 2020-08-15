@@ -1,0 +1,15 @@
+<h1>ドリンク詳細</h1>
+<div>
+  <p>タイトル : <%= @drink.title %></p>
+  <p>レシピ : <%= @drink.content %></p>
+  <p>コメント : <%= @drink.comment %></p>
+  <p>投稿者 : <%= @drink.user.name %>
+</div>
+
+<h2>関連する投稿</h2>
+<h3>このドリンクを使った組み合わせ</h3>
+<ul>
+  <% @drink.pairings.each do |pairing| %>
+    <li><%= link_to pairing.title, pairing_path(pairing) %></li>
+  <% end %>
+</ul>

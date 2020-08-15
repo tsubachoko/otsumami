@@ -1,0 +1,27 @@
+<h1>組み合わせ方の詳細</h1>
+<div>
+  <p>タイトル : <%= @pairing.title %></p>
+  <p>ドリンク : <%= link_to @pairing.drink.title, drink_path(@pairing.drink) %></p>
+  <p>おつまみ : <%= link_to @pairing.food.title, food_path(@pairing.food) %></p>
+  <p>コメント : <%= @pairing.comment %></p>
+  <p>投稿者 : <%= @pairing.user.name %>
+</div>
+
+<h2>関連する投稿</h2>
+<h3>同じドリンクの組み合わせ</h3>
+<ul>
+  <% @pairing.drink.pairings.each do |pairing| %>
+    <% unless pairing == @pairing %>
+      <li><%= link_to pairing.title, pairing_path(pairing) %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<h3>同じおつまみの組み合わせ</h3>
+<ul>
+  <% @pairing.food.pairings.each do |pairing| %>
+    <% unless pairing == @pairing %>
+      <li><%= link_to pairing.title, pairing_path(pairing) %></li>
+    <% end %>
+  <% end %>
+</ul>

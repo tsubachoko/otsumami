@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @parings = Paring.all
+    @pairings = pairing.all
     @drinks  = Drink.all
     @foods   = Food.all
   end

@@ -25,7 +25,7 @@ FileUtils.chdir APP_ROOT do
   #   FileUtils.cp 'config/database.yml.sample', 'config/database.yml'
   # end
 
-  puts "\n== Preparing database =="
+  puts "\n== Prepairing database =="
   system! 'bin/rails db:prepare'
 
   puts "\n== Removing old logs and tempfiles =="

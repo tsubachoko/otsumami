@@ -1,0 +1,15 @@
+<h1>おつまみ詳細</h1>
+<div>
+  <p>タイトル : <%= @food.title %></p>
+  <p>レシピ : <%= @food.content %></p>
+  <p>コメント : <%= @food.comment %></p>
+  <p>投稿者 : <%= @food.user.name %>
+</div>
+
+<h2>関連する投稿</h2>
+<h3>このおつまみを使った組み合わせ</h3>
+<ul>
+  <% @food.pairings.each do |pairing| %>
+    <li><%= link_to pairing.title, pairing_path(pairing) %></li>
+  <% end %>
+</ul>

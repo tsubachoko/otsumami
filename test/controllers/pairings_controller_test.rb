@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class ParingsControllerTest < ActionDispatch::IntegrationTest
+class PairingsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get parings_path
+    get pairings_path
     assert_response :success
   end
 

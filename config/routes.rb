@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   
   root 'items#index'
   
-  resources :parings, only: :index
-  resources :drinks, only: :index
-  resources :foods, only: :index
+  resources :pairings, only: [:index, :show]
+  resources :drinks, only: [:index, :show]
+  resources :foods, only: [:index, :show]
 
 
 end

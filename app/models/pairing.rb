@@ -1,4 +1,4 @@
-class Paring < Item
+class Pairing < Item
   validates :content, absence: true
   validates :drink_id, presence: true
   validates :food_id, presence: true

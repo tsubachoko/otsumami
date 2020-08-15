@@ -13,7 +13,7 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :drinks, dependent: :destroy
   has_many :foods, dependent: :destroy
-  has_many :parings, dependent: :destroy
+  has_many :pairings, dependent: :destroy
 
   private
 

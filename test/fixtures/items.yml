@@ -16,7 +16,7 @@ nuts:
 
 nuts_and_beer:
   user: tester
-  type: Paring
+  type: Pairing
   title: ビール×ナッツ
   drink_id: beer
   food_id: nuts

@@ -2,8 +2,8 @@
   <div class="col-md-8">
     <h1>組み合わせ</h1>
     <ul>
-      <% @parings.each do |paring| %>
-        <li><%= "#{paring.title} : #{paring.drink.title} × #{paring.food.title}" %>:</li>
+      <% @pairings.each do |pairing| %>
+        <li><%= "#{pairing.title} : #{pairing.drink.title} × #{pairing.food.title}" %>:</li>
       <% end %>
     </ul>
 
