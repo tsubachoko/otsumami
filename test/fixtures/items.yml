@@ -1,6 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 beer:
+  id: 1
   user: tester
   type: Drink
   title: ビール
@@ -8,16 +9,25 @@ beer:
   comment: ごはんでもなんでも合います
 
 nuts:
+  id: 2
   user: tester
   type: Food
   title: ナッツ
   content: 酒に合う豆
   comment: 強めのお酒は大概合います
 
+takoyaki:
+  id: 3
+  user: tester
+  type: Food
+  title:  たこ焼き
+  content: 粉もん
+  comment: ビールが一番合う
+
 nuts_and_beer:
   user: tester
   type: Pairing
   title: ビール×ナッツ
-  drink_id: beer
-  food_id: nuts
+  drink_id: 1   # beer
+  food_id: 2    # nuts
   comment: 合うっちゃ合う

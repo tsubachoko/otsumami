@@ -1,6 +1,4 @@
 <h1>おつまみ</h1>
 <ul>
-  <% @foods.each do |food| %>
-    <li><%= food.title %></li>
-  <% end %>
+  <%= render @foods %>
 </ul>

@@ -2,23 +2,17 @@
   <div class="col-md-8">
     <h1>組み合わせ</h1>
     <ul>
-      <% @pairings.each do |pairing| %>
-        <li><%= "#{pairing.title} : #{pairing.drink.title} × #{pairing.food.title}" %>:</li>
-      <% end %>
+      <%= render @pairings %>
     </ul>
 
     <h1>ドリンク</h1>
     <ul>
-      <% @drinks.each do |drink| %>
-        <li><%= "#{drink.title} : #{drink.content}" %></li>
-      <% end %>
+      <%= render @drinks %>
     </ul>
 
     <h1>おつまみ</h1>
     <ul>
-      <% @foods.each do |food| %>
-        <li><%= "#{food.title} : #{food.content}" %></li>
-      <% end %>
+      <%= render @foods %>
     </ul>
   </div>
 </div>

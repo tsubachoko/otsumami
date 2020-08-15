@@ -7,9 +7,10 @@ class PairingTest < ActiveSupport::TestCase
   def setup
     user = users(:tester)
     @drink = items(:beer)
-    @food = items(:nuts)
-    @pairing = user.pairings.build(title: "ビール×ナッツ", drink_id: @drink.id, food_id: @food.id,
-                                 comment: "悪かない")
+    @food = items(:takoyaki)
+    @pairing = user.pairings.build(title: "ビール×たこ焼き", drink_id: @drink.id, food_id: @food.id,
+                                   comment: "最強、温泉行った後とか")
+
   end
 
 
@@ -41,7 +42,7 @@ class PairingTest < ActiveSupport::TestCase
   # これをpairingのテストに書くかは微妙なところ
   test "associated pairings should be destroyed by destroy drink" do
     @pairing.save
-    assert_difference 'Pairing.count', -1 do
+    assert_difference 'Pairing.count', -2 do
       @drink.destroy
     end
   end
