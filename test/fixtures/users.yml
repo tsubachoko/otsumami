@@ -3,5 +3,5 @@
 tester:
   name: test
   email: test@example.com
-  password_digest: <%= "password" %> # digestでちゃんと計算した方がいい？
+  password_digest: <%= User.digest("password") %> # digestでちゃんと計算した方がいい？
 

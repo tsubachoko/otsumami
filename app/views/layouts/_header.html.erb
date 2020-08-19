@@ -3,8 +3,13 @@
     <%= link_to "オツマミ", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "ログイン", '#' %></li>
-        <li><%= link_to "新規登録", '#' %></li>
+        <% if logged_in? %>
+          <li><%= link_to "マイペ－ジ", user_path(current_user) %></li>
+          <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "ログイン", login_path %></li>
+          <li><%= link_to "新規登録", new_user_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

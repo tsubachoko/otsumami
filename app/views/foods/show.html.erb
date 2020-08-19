@@ -3,7 +3,7 @@
   <p>タイトル : <%= @food.title %></p>
   <p>レシピ : <%= @food.content %></p>
   <p>コメント : <%= @food.comment %></p>
-  <p>投稿者 : <%= @food.user.name %>
+  <p>投稿者 : <%= link_to @food.user.name, user_path(@food.user) %>
 </div>
 
 <h2>関連する投稿</h2>

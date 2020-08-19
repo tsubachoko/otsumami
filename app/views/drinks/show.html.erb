@@ -3,7 +3,7 @@
   <p>タイトル : <%= @drink.title %></p>
   <p>レシピ : <%= @drink.content %></p>
   <p>コメント : <%= @drink.comment %></p>
-  <p>投稿者 : <%= @drink.user.name %>
+  <p>投稿者 : <%= link_to @drink.user.name, user_path(@drink.user) %>
 </div>
 
 <h2>関連する投稿</h2>

@@ -4,7 +4,7 @@
   <p>ドリンク : <%= link_to @pairing.drink.title, drink_path(@pairing.drink) %></p>
   <p>おつまみ : <%= link_to @pairing.food.title, food_path(@pairing.food) %></p>
   <p>コメント : <%= @pairing.comment %></p>
-  <p>投稿者 : <%= @pairing.user.name %>
+  <p>投稿者 : <%= link_to @pairing.user.name, user_path(@pairing.user) %>
 </div>
 
 <h2>関連する投稿</h2>
