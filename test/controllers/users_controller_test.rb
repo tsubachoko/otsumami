@@ -26,7 +26,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert flash.any?
     follow_redirect!
     assert_template 'items/index'
-    assert logged_in?
+    assert is_logged_in?
   end
 
   test "invalid signup information " do
