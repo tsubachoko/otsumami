@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in(@user)
       flash[:success] = "会員登録を完了しました"
-      redirect_to root_url
+      redirect_to root_path
     else
       render 'new'
     end
