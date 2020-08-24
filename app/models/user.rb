@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :foods, dependent: :destroy
   has_many :pairings, dependent: :destroy
 
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_items, through: :favorites, source: :item
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
