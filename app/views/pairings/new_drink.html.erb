@@ -1,0 +1,11 @@
+<h1>合わせ方の投稿</h1>
+
+<h2>ドリンクを選択してください</h2>
+
+<ul>
+  <% @drinks.each do |drink| %>
+    <li>
+      <%= link_to drink.title, pairings_new_food_path(drink_id: drink.id) %>
+    </li>
+  <% end %>
+</ul>

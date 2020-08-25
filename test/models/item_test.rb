@@ -31,9 +31,9 @@ class ItemTest < ActiveSupport::TestCase
   end
 
   test "title should not be too long" do
-    @drink.title = "a" * 21
+    @drink.title = "a" * 31
     assert_not @drink.valid?
-    @drink.title = "a" * 20
+    @drink.title = "a" * 30
     assert @drink.valid?
   end
 
