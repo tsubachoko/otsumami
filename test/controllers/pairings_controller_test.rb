@@ -19,7 +19,7 @@ class PairingsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "post when logged in" do
+  test "post and delete when logged in" do
     log_in_as(@user)
     # 無効な投稿
     assert_no_difference 'Pairing.count' do
@@ -49,6 +49,30 @@ class PairingsControllerTest < ActionDispatch::IntegrationTest
       post pairings_path params: { pairing: { title: "title", drink_id: @drink.id, food_id: @food.id, comment: "comment" } }
     end
     assert_redirected_to login_path
+  end
+
+  test "destroy when logged in" do
+    log_in_as(@user)
+    assert_difference 'Pairing.count', -1 do
+      delete pairing_path(@pairing)
+    end
+    assert_redirected_to root_path
+  end
+
+  test "destroy when not logged in" do
+    assert_no_difference 'Pairing.count' do
+      delete pairing_path(@pairing)
+    end
+    assert_redirected_to login_path
+  end
+
+  test "destroy when logged in with wrong user" do
+    other_user = users(:tester2)
+    log_in_as(other_user)
+    assert_no_difference 'Pairing.count' do
+      delete pairing_path(@pairing)
+    end
+    assert_redirected_to root_path
   end
 
 end

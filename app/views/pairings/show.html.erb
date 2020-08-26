@@ -5,7 +5,10 @@
   <p>おつまみ : <%= link_to @pairing.food.title, food_path(@pairing.food) %></p>
   <p>コメント : <%= @pairing.comment %></p>
   <p>投稿者 : <%= link_to @pairing.user.name, user_path(@pairing.user) %>
-</div>
+
+  <% if current_user?(@pairing.user) %>
+    <p><%= link_to '投稿を削除する', pairing_path(@pairing), method: :delete, data: { confirm: "削除してもよろしいですか？" }, class: 'btn btn-warning' %></p></div>
+  <% end %>
 
 <h2>関連する投稿</h2>
 <h3>同じドリンクの組み合わせ</h3>

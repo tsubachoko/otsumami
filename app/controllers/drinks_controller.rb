@@ -1,6 +1,7 @@
-class DrinksController < ApplicationController
+class DrinksController < ItemsController
   
-  before_action :logged_in_user, only: [:new, :create]
+  before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :correct_user, only: :destroy
 
   def index
     @drinks = Drink.all
@@ -25,6 +26,12 @@ class DrinksController < ApplicationController
     end
   end
 
+  def destroy
+    drink = current_user.drinks.find_by(id: params[:id])
+    drink.destroy
+    flash[:success] = "投稿を削除しました"
+    redirect_to root_path
+  end
 
   private
 

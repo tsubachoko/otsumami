@@ -4,6 +4,10 @@
   <p>レシピ : <%= @drink.content %></p>
   <p>コメント : <%= @drink.comment %></p>
   <p>投稿者 : <%= link_to @drink.user.name, user_path(@drink.user) %>
+  
+  <% if current_user?(@drink.user) %>
+    <p><%= link_to '投稿を削除する', drink_path(@drink), method: :delete, data: { confirm: "削除してもよろしいですか？※関連する組み合わせも削除されるので、注意してください" }, class: 'btn btn-warning' %></p>
+  <% end %>
 </div>
 
 <h2>関連する投稿</h2>

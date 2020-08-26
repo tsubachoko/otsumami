@@ -3,5 +3,10 @@
 tester:
   name: test
   email: test@example.com
-  password_digest: <%= User.digest("password") %> # digestでちゃんと計算した方がいい？
+  password_digest: <%= User.digest("password") %>
 
+
+tester2:
+  name: test2
+  email: test2@example.com
+  password_digest: <%= User.digest("password") %>

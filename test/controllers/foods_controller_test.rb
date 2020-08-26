@@ -49,4 +49,28 @@ class FoodsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_path
   end
 
+  test "destroy when logged in" do
+    log_in_as(@user)
+    assert_difference 'Food.count', -1 do
+      delete food_path(@food)
+    end
+    assert_redirected_to root_path
+  end
+
+  test "destroy when not logged in" do
+    assert_no_difference 'Food.count' do
+      delete food_path(@food)
+    end
+    assert_redirected_to login_path
+  end
+
+  test "destroy when logged in with wrong user" do
+    other_user = users(:tester2)
+    log_in_as(other_user)
+    assert_no_difference 'Food.count' do
+      delete food_path(@food)
+    end
+    assert_redirected_to root_path
+  end
+
 end

@@ -1,6 +1,7 @@
-class FoodsController < ApplicationController
+class FoodsController < ItemsController
   
-  before_action :logged_in_user, only: [:new, :create]
+  before_action :logged_in_user, only: [:new, :create, :destroy]
+  before_action :correct_user, only: :destroy
 
   def index
     @foods = Food.all
@@ -23,6 +24,13 @@ class FoodsController < ApplicationController
       flash.now[:danger] = "投稿に失敗しました"
       render 'foods/new'
     end
+  end
+
+  def destroy
+    food = current_user.foods.find_by(id: params[:id])
+    food.destroy
+    flash[:success] = "投稿を削除しました"
+    redirect_to root_path
   end
 
 

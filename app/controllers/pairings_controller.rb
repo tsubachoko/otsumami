@@ -1,6 +1,7 @@
-class PairingsController < ApplicationController
+class PairingsController < ItemsController
   
-  before_action :logged_in_user, only: [:new, :new_drink, :new_food, :create]
+  before_action :logged_in_user, only: [:new, :new_drink, :new_food, :create, :destroy]
+  before_action :correct_user, only: :destroy
 
   def index
     @pairings = Pairing.all
@@ -36,6 +37,12 @@ class PairingsController < ApplicationController
     end
   end
 
+  def destroy
+    pairing = current_user.pairings.find_by(id: params[:id])
+    pairing.destroy
+    flash[:success] = "投稿を削除しました"
+    redirect_to root_path
+  end
 
   private
 
