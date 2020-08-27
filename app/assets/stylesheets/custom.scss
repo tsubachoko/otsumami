@@ -20,6 +20,18 @@ body {
   }
 }
 
+header {
+  background-color: #8B4513;
+}
+
+.nav > li > a {
+  color: #fff;
+  &:hover{
+    background-color:  #8B4513;
+    color: #999;
+  }
+}
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
