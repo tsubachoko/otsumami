@@ -24,6 +24,18 @@ class User < ApplicationRecord
     BCrypt::Password.create(string, cost: cost)
   end
 
+  def favorite(item)
+    favorite_items << item
+  end
+
+  def unfavorite(item)
+    favorites.find_by(item_id: item.id).destroy
+  end
+
+  def favorite?(item)
+    favorite_items.include?(item)
+  end
+
   private
 
     def downcase_email

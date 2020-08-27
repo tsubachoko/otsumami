@@ -1,3 +1,4 @@
 <li>
   <%= link_to food.title, food_path(food) %> : <%= food.content %>
+  <%= render 'favorites/favorite_form', item: food %>
 </li>

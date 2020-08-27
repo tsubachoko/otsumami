@@ -74,4 +74,14 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test "favorite and unfavorite" do
+    user = users(:tester)
+    item = items(:beer)
+    assert_not user.favorite?(item)
+    user.favorite(item)
+    assert user.favorite?(item)
+    user.unfavorite(item)
+    assert_not user.favorite?(item)
+  end
+
 end

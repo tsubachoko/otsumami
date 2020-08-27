@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :drinks, only: [:index, :show, :new, :create, :destroy]
   resources :foods, only: [:index, :show, :new, :create, :destroy]
-
+  resources :favorites, only: [:create, :destroy]
   resources :users
 
 end

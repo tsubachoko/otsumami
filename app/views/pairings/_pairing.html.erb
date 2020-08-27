@@ -1,3 +1,4 @@
 <li>
   <%= link_to pairing.title, pairing_path(pairing) %> : <%= link_to pairing.drink.title, drink_path(pairing.drink) %> × <%= link_to pairing.food.title, food_path(pairing.food) %>
+  <%= render 'favorites/favorite_form', item: pairing %>
 </li>
