@@ -1,4 +1,10 @@
-<li>
-  <%= link_to pairing.title, pairing_path(pairing) %> : <%= link_to pairing.drink.title, drink_path(pairing.drink) %> × <%= link_to pairing.food.title, food_path(pairing.food) %>
-  <%= render 'favorites/favorite_form', item: pairing %>
-</li>
+<div class="col-md-3">
+  <li class="item pairing">
+    <div class="item-title">
+      <%= link_to pairing.title, pairing_path(pairing) %>
+    </div>
+    <p>ドリンク : <%= pairing.drink.title %></p>
+    <p>おつまみ : <%= pairing.food.title %></p>
+    <%= render 'favorites/favorite_form', item: pairing %>
+  </li>
+</div>

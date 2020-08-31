@@ -1,4 +1,9 @@
-<li>
-  <%= link_to drink.title, drink_path(drink) %> : <%= drink.content %>
-  <%= render 'favorites/favorite_form', item: drink %>
-</li>
+<div class="col-md-3">
+  <li class="item drink">
+    <div class="item-title">
+      <%= link_to drink.title, drink_path(drink) %>
+    </div>
+    <%= drink.content %>
+    <%= render 'favorites/favorite_form', item: drink %>
+  </li>
+</div>
