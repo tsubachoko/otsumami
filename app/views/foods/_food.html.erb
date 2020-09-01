@@ -1,9 +1,11 @@
 <div class="col-md-3 col-sm-6">
   <li class="item food">
-    <div class="item-title">
+    <div class="item-title col-sm-8">
       <%= link_to food.title, food_path(food) %>
     </div>
-    <%= food.content %>
-    <%= render 'favorites/favorite_form', item: food %>
+    <div class="follow col-sm-4">
+      <%= render 'favorites/favorite_form', item: food %>
+    </div>
+    <div class="col-sm-12"><%= food.content %></div>
   </li>
 </div>
