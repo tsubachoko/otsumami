@@ -12,19 +12,15 @@
 
 <h2>関連する投稿</h2>
 <h3>同じドリンクの組み合わせ</h3>
-<ul>
-  <% @pairing.drink.pairings.each do |pairing| %>
-    <% unless pairing == @pairing %>
-      <li><%= link_to pairing.title, pairing_path(pairing) %></li>
-    <% end %>
-  <% end %>
-</ul>
+<div class="row">
+  <ul>
+    <%= render @pairing.drink.pairings %>
+  </ul>
+</div>
 
 <h3>同じおつまみの組み合わせ</h3>
-<ul>
-  <% @pairing.food.pairings.each do |pairing| %>
-    <% unless pairing == @pairing %>
-      <li><%= link_to pairing.title, pairing_path(pairing) %></li>
-    <% end %>
-  <% end %>
-</ul>
+<div class="row">
+  <ul>
+    <%= render @pairing.food.pairings %>
+  </ul>
+</div>
