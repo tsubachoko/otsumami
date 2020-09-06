@@ -5,7 +5,7 @@
 <ul>
   <% @drinks.each do |drink| %>
     <li>
-      <%= link_to drink.title, pairings_new_food_path(drink_id: drink.id) %>
+      <%= link_to drink.title, new_pairing_path(drink_id: drink.id, food_id: params[:food_id]) %>
     </li>
   <% end %>
 </ul>

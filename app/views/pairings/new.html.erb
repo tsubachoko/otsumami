@@ -7,16 +7,29 @@
       <%= f.text_field :title, class: "form-control" %>
 
       <p>ドリンク</p>
-      <p><%= @drink.title %></p>
+      <% unless @drink.nil? %>
+        <% drink_title = @drink.title %>
+      <% else %>
+        <% drink_title = "ドリンクを選択してください" %>
+      <% end %>
+      <p><%= link_to drink_title, pairings_new_drink_path(food_id: params[:food_id]) %></p>
 
       <p>おつまみ</p>
-      <p><%= @food.title %></p>
+      <% unless @food.nil? %>
+        <% food_title = @food.title %>
+      <% else %>
+        <% food_title = "おつまみを選択してください" %>
+      <% end %>
+      <p><%= link_to food_title, pairings_new_food_path(drink_id: params[:drink_id]) %></p>
+
 
       <%= f.label :comment, "コメント" %>
       <%= f.text_field :comment, class: "form-control" %>
 
-      <%= hidden_field :pairing, :drink_id, value: @drink.id %>
-      <%= hidden_field :pairing, :food_id, value: @food.id %>
+      <% unless @drink.nil? || @food.nil? %>
+        <%= hidden_field :pairing, :drink_id, value: @drink.id %>
+        <%= hidden_field :pairing, :food_id, value: @food.id %>
+      <% end %>
 
       <%= f.submit "投稿", class: "btn btn-primary" %>
     <% end %>

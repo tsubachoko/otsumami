@@ -16,7 +16,6 @@ class PairingsController < ItemsController
   end
 
   def new_food
-    @drink = Drink.find_by(id: params[:drink_id])
     @foods = current_user.favorite_items.where(type: 'Food')
   end
 
