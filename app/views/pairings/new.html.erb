@@ -5,23 +5,30 @@
     <%= form_with(model: @pairing, local: true) do |f| %>
       <%= f.label :title, "タイトル" %>
       <%= f.text_field :title, class: "form-control" %>
-
-      <p>ドリンク</p>
+      
       <% unless @drink.nil? %>
         <% drink_title = @drink.title %>
       <% else %>
         <% drink_title = "ドリンクを選択してください" %>
       <% end %>
-      <p><%= link_to drink_title, pairings_new_drink_path(food_id: params[:food_id]) %></p>
+      <div class="col-sm-5">
+        <p><b>ドリンク</b></p>
+        <p><%= link_to drink_title, pairings_new_drink_path(food_id: params[:food_id]) %></p>
+      </div>
 
-      <p>おつまみ</p>
+      <div class="col-sm-2 hidden-xs">
+        <div class="pairing-mark">×</div>
+      </div>
+
       <% unless @food.nil? %>
         <% food_title = @food.title %>
       <% else %>
         <% food_title = "おつまみを選択してください" %>
       <% end %>
-      <p><%= link_to food_title, pairings_new_food_path(drink_id: params[:drink_id]) %></p>
-
+      <div class="col-sm-5">
+        <p><b>おつまみ</b></p>
+        <p><%= link_to food_title, pairings_new_food_path(drink_id: params[:drink_id]) %></p>
+      </div>
 
       <%= f.label :comment, "コメント" %>
       <%= f.text_field :comment, class: "form-control" %>
