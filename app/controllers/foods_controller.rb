@@ -4,7 +4,7 @@ class FoodsController < ItemsController
   before_action :correct_user, only: :destroy
 
   def index
-    @foods = Food.all
+    @foods = Food.paginate(page: params[:page], per_page: 20)
   end
 
   def show

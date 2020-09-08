@@ -4,7 +4,7 @@ class PairingsController < ItemsController
   before_action :correct_user, only: :destroy
 
   def index
-    @pairings = Pairing.all
+    @pairings = Pairing.paginate(page: params[:page], per_page: 20)
   end
 
   def show

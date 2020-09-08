@@ -4,7 +4,7 @@ class DrinksController < ItemsController
   before_action :correct_user, only: :destroy
 
   def index
-    @drinks = Drink.all
+    @drinks = Drink.paginate(page: params[:page], per_page: 20)
   end
 
   def show
