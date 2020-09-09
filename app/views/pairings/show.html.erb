@@ -14,13 +14,21 @@
 <h3>同じドリンクの組み合わせ</h3>
 <div class="row">
   <ul>
-    <%= render @pairing.drink.pairings %>
+    <% @pairing.drink.pairings.each do |pairing| %>
+      <% unless pairing == @pairing %>
+        <%= render pairing %>
+      <% end %>
+    <% end %>  
   </ul>
 </div>
 
 <h3>同じおつまみの組み合わせ</h3>
 <div class="row">
   <ul>
-    <%= render @pairing.food.pairings %>
+    <% @pairing.food.pairings.each do |pairing| %>
+      <% unless pairing == @pairing %>
+        <%= render pairing %>
+      <% end %>
+    <% end %>  
   </ul>
 </div>
