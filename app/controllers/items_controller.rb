@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
 
   def index
-    @pairings = Pairing.all
-    @drinks  = Drink.all
-    @foods   = Food.all
+    @pairings = Pairing.first(8)
+    @drinks  = Drink.first(8)
+    @foods   = Food.first(8)
   end
 
 
