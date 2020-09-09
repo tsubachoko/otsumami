@@ -1,6 +1,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@mixin abbreviation {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin abbreviation-3line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
 //各ページ共通のデザイン
 body {
   padding-top: 60px;
@@ -26,7 +39,7 @@ header {
 
 .nav > li > a {
   color: #fff;
-  &:hover{
+  &:hover {
     background-color:  #8B4513;
     color: #999;
   }
@@ -66,6 +79,15 @@ input {
 .item-title {
   font-size: large;
   padding: 0;
+  @include abbreviation;
+}
+
+.item-content {
+  @include abbreviation-3line;
+}
+
+.pairing-content {
+  @include abbreviation;
 }
 
 .follow {
