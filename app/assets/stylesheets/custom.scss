@@ -14,9 +14,12 @@
   overflow: hidden;
 }
 
-//各ページ共通のデザイン
+// 各ページ共通のデザイン
 body {
   padding-top: 60px;
+  @media (max-width: 767px) {
+    padding-top: 120px;
+  }
 }
 
 #logo {
@@ -61,7 +64,7 @@ input {
   margin-bottom: 15px;
 }
 
-//アイテム表示
+// アイテム表示
 .item {
   min-height: 120px;
   max-height: 120px;
