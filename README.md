@@ -18,7 +18,7 @@ https://otsumami283.herokuapp.com/
 - フレームワーク
   - Ruby on Rails 6.0
 - データベース
-  - MySQLとか
+  - MySQL
 - テスト
   - minitest
 - Cloud
