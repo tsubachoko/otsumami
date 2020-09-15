@@ -1,24 +1,25 @@
-# README
+# オツマミ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 概要
+飲み物とそれに合うおつまみについてユーザーが投稿していくWebアプリ
 
-Things you may want to cover:
+https://otsumami283.herokuapp.com/
 
-* Ruby version
 
-* System dependencies
+## 機能一覧
+- ログイン機能
+- ドリンク、おつまみ、それらの組み合わせの投稿、削除機能
+- 投稿にいいねを付ける機能
+- 関連する投稿を表示する機能
+- ページネーション機能
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用技術
+- フレームワーク
+  - Ruby on Rails 6.0
+- データベース
+  - MySQLとか
+- テスト
+  - minitest
+- Cloud
+  - heroku
