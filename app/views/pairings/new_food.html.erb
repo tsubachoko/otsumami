@@ -3,16 +3,14 @@
 <h2>おつまみを選択してください</h2>
 
 <div class="row">
-  <ul>
-    <% @foods.each do |food| %>
-      <div class="col-md-3 col-sm-6">
-        <li class="item food">
-          <div class="item-title col-sm-12">
-            <%= link_to food.title, new_pairing_path(food_id: food.id, drink_id: params[:drink_id]) %>
-          </div>
-          <div class="col-sm-12"><%= food.content %></div>
-        </li>
+  <% @foods.each do |food| %>
+    <div class="col-md-3 col-sm-6">
+      <div class="item food">
+        <div class="item-title col-sm-12">
+          <%= link_to food.title, new_pairing_path(food_id: food.id, drink_id: params[:drink_id]) %>
+        </div>
+        <div class="item-content col-sm-12"><%= food.content %></div>
       </div>
-    <% end %>
-  </ul>
+    </div>
+  <% end %>
 </div>

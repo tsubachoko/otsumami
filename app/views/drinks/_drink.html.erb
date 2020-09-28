@@ -1,11 +1,13 @@
 <div class="col-md-3 col-sm-6">
-  <li class="item drink">
-    <div class="item-title col-sm-8">
-      <%= link_to drink.title, drink_path(drink) %>
+  <div class="item drink">
+    <div class="row">
+      <div class="item-title col-sm-8">
+        <%= link_to drink.title, drink_path(drink) %>
+      </div>
+      <div class="follow col-sm-4">
+        <%= render 'favorites/favorite_form', item: drink %>
+      </div>
+      <div class="item-content col-sm-12"><%= drink.content %></div>
     </div>
-    <div class="follow col-sm-4">
-      <%= render 'favorites/favorite_form', item: drink %>
-    </div>
-    <div class="item-content col-sm-12"><%= drink.content %></div>
-  </li>
+  </div>
 </div>

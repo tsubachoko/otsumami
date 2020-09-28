@@ -26,10 +26,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-gem 'bootstrap-sass', '>= 3.4.1'
+gem 'bootstrap', '~> 4.0'
+gem 'jquery-rails'
 
-gem 'will_paginate',           '3.1.8'
-gem 'bootstrap-will_paginate', '1.0.0'
+gem 'will_paginate', '3.1.8'
+gem 'will_paginate-bootstrap4', '0.2.2'
 
 group :development, :test do
   # Use mysql as the database for Active Record

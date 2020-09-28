@@ -1,0 +1,132 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+
+@import "bootstrap";
+
+@mixin abbreviation {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin abbreviation-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+// 各ページ共通のデザイン
+body {
+  padding-top: 100px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 2.0em;
+  color: #fff;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.navbar-toggler {
+  border-color: #fff;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='3' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+header {
+  background-color: #8B4513;
+}
+
+.navbar-nav > li > a {
+  color: #fff;
+  &:hover {
+    background-color:  #8B4513;
+    color: #999;
+  }
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  small {
+    float: left;
+  }
+}
+
+// 入力フォーム
+input {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+// アイテム表示
+.item {
+  min-height: 140px;
+  max-height: 140px;
+  margin: 10px 0px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: #222;
+}
+
+.item > a {
+  color: #444;
+}
+
+.item-title {
+  font-size: large;
+  padding: 0;
+  @include abbreviation;
+}
+
+.item-content {
+  @include abbreviation-content;
+}
+
+.pairing-content {
+  @include abbreviation;
+}
+
+.follow {
+  padding: 0;
+}
+
+.pairing {
+  background-color: #e9d355;
+}
+
+.drink {
+  background-color: #70b0db;
+}
+
+.food {
+  background-color: #7ae283;
+}
+
+.pairing-mark {
+  font-size: 40px;
+}
+ 

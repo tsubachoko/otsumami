@@ -1,15 +1,13 @@
-<div id="follow_form">
-  <% if logged_in? %>
-    <% if current_user.favorite?(item) %>
-      <%= form_with(model: current_user.favorites.find_by(item_id: item.id),
-                    html: { method: :delete }, local: true) do |f| %>
-        <%= f.submit "解除", class: "btn" %>
-      <% end %>
-    <% else %>
-      <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
-        <%= hidden_field_tag :item_id, item.id %>
-        <%= f.submit "いいね", class: "btn btn-primary" %>
-      <% end %>
+<% if logged_in? %>
+  <% if current_user.favorite?(item) %>
+    <%= form_with(model: current_user.favorites.find_by(item_id: item.id),
+                  html: { method: :delete }, local: true) do |f| %>
+      <%= f.submit "解除", class: "btn btn-light" %>
+    <% end %>
+  <% else %>
+    <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
+      <%= hidden_field_tag :item_id, item.id %>
+      <%= f.submit "いいね", class: "btn btn-primary" %>
     <% end %>
   <% end %>
-</div>
+<% end %>
